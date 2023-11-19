@@ -9,6 +9,8 @@ for i in range(n-1):
         if now in d:
             ans += d[now]
         
-        if arr[i]+arr[j] not in d:
-            d[arr[i]+arr[j]] = 1
+    if arr[i] not in d:
+        d[arr[i]] = 1
+    else:
+        d[arr[i]] += 1
 print(ans)

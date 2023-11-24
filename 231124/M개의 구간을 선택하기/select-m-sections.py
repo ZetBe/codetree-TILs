@@ -10,7 +10,5 @@ for j in range(1, m):
     for i in range(2, n):
         for k in range(i-1):
             dp[i][j] = max(dp[i][j], dp[i-2-k][j-1]+arr[i], dp[i-1][j]+arr[i])
-ma = 0
-for i in dp:
-    ma = max(ma, max(i))
-print(ma)
+
+print(dp[n-1][m-1])

@@ -1,12 +1,12 @@
 n, m = map(int, input().split())
 graph = [[] for i in range(n+1)]
-dijk = [0 for i in range(n+1)]
+dijk = [-1 for i in range(n+1)]
 v = [0 for i in range(n+1)]
 for i in range(m):
     t, f, g = map(int, input().split())
     graph[t].append([f, g])
 def dijkstra(n, now):
-    if dijk[n] == 0:
+    if dijk[n] == -1:
         dijk[n] = now
     else:
         dijk[n] = min(now, dijk[n])

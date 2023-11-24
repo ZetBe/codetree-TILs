@@ -1,27 +1,31 @@
 n, m = map(int, input().split())
-graph = [[] for i in range(n+1)]
-dijk = [-1 for i in range(n+1)]
+graph = [[0 for j in range(n+1)] for i in range(n+1)]
+dijk = [10**1000 for i in range(n+1)]
 v = [0 for i in range(n+1)]
 for i in range(m):
     t, f, g = map(int, input().split())
-    graph[t].append([f, g])
-def dijkstra(n, now):
-    if dijk[n] == -1:
-        dijk[n] = now
+    graph[t][f] = g
+
+dijk[1] = 0
+
+for i in range(1, n+1):
+    min_index = -1
+    for j in range(1, n+1):
+        if v[j] == 1:
+            continue
+        
+        if min_index == -1 or dijk[min_index] > dijk[j]:
+            min_index = j
+    v[min_index] = 1
+
+    for j in range(1, n+1):
+        if graph[min_index][j] == 0:
+            continue
+        
+        dijk[j] = min(dijk[j], dijk[min_index]+graph[min_index][j])
+
+for i in range(2, n+1):
+    if dijk[i] == 10**1000:
+        print(-1)
     else:
-        dijk[n] = min(now, dijk[n])
-    if v[n] == 1:
-        return
-    v[n] = 1
-    for i in graph[n]:
-        dijkstra(i[0], now+i[1])
-
-v[1] = 1
-for i in graph[1]:
-    dijkstra(i[0], i[1])
-
-if n == 1:
-    print(0)
-else:
-    for i in range(2, len(dijk)):
         print(dijk[i])

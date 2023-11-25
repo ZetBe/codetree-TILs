@@ -10,5 +10,5 @@ if arr[n-1] == 0:
     a += 1
 if sum(arr) == n:
     print(a)
-else:
+elif sum(arr) < n or len(arr) == 1:
     print(-1)

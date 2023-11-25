@@ -8,7 +8,11 @@ for i in range(1, n-1):
 if arr[n-1] == 0:
     arr[n-2], arr[n-1] = (arr[n-2]+1)%2, (arr[n-1]+1)%2
     a += 1
-if sum(arr) == n and len(arr) > 1:
-    print(a)
+
+if len(arr) == 1 and sum(arr) == 1:
+    print(0)
 else:
-    print(-1)
+    if sum(arr) == n and len(arr) > 1:
+        print(a)
+    else:
+        print(-1)

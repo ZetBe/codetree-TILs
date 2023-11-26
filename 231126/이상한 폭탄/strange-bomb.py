@@ -1,6 +1,6 @@
 n, k = map(int, input().split())
 d = {}
-a = 0
+a = -1
 for i in range(n):
     now = int(input())
     if now not in d:

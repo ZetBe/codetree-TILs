@@ -7,7 +7,7 @@ for i in range(n):
     heapq.heappush(x1, line[i][0])
     heapq.heappush(x2, line[i][1])
 a = 1
-answer = 0
+answer = 1
 heapq.heappop(x1)
 for i in range(n*2-1):
     if len(x1) == 0:

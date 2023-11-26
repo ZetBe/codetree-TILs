@@ -8,4 +8,5 @@ for i in range(n):
     else:
         if d[now] + k >= i:
             a = max(a, now)
+        d[now] = i
 print(a)

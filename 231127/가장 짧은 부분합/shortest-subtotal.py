@@ -8,7 +8,7 @@ j = 0
 temp = 0
 for i in range(1, n+1):
     
-    while j < n and temp+arr[j+1] < s:
+    while j < n and temp < s:
         temp += arr[j]
         j += 1
     if temp >= s:

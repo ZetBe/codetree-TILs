@@ -14,4 +14,7 @@ for i in range(1, n+1):
     if temp >= s:
         a = min(a, j-i)
     temp -= arr[i]
-print(a)
+if a == sys.maxsize:
+    print(-1)
+else:
+    print(a)

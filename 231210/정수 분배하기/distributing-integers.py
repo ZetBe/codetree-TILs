@@ -11,11 +11,9 @@ else:
         for i in arr:
             c = i//mid
             count += c
-        if count == m:
-            l += 2
-            a = max(a, mid)
-        elif count < m:
+        if count < m:
             r = mid - 1
         else:
+            a = max(a, mid)
             l = mid + 1
     print(a)

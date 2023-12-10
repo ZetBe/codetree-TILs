@@ -4,7 +4,7 @@ l, r = 1, n*2
 while l <= r:
     mid = (l+r)//2
     if mid%3==0 or mid%5==0:
-        l+=2
+        r+=2
     else:
         three = mid//3
         five = mid//5

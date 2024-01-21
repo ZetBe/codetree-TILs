@@ -5,7 +5,7 @@ now = 0
 a = 0
 answer = -100**1000
 while now < n:
-    if a + arr[now] < 0:
+    if a + arr[now] < 0 or a < 0:
         a = 0
     a += arr[now]
     now += 1
